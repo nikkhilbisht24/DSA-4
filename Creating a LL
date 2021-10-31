@@ -1,0 +1,30 @@
+//1. Before first
+//2. Inserting after given index
+void Insert(struct Node *p, int index, int x)
+{
+    struct Node *t;
+    if(index<0 || index > count(p))
+    {
+        return;
+    }
+    t=(struct Node *)malloc(sizeof(struct Node));
+    t->data=x;
+
+    // Before first
+    if(index==0)
+    {
+        t->next=first;
+        first=t;
+    }
+
+    // Inserting after given index
+    else
+    {
+        for(i=0;i<index-1;i++)
+        {
+            p=p->next;
+        }
+        t->next = p->next;
+        p->next=t;
+    }
+}
