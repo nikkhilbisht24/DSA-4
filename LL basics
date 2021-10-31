@@ -1,0 +1,8 @@
+#How to create a node?
+struct Node *P;
+P = (struct Node*)malloc(sizeof(struct Node)) //in C
+P = new Node; //in C++
+
+# Access members of a NODE
+P->data = 10;
+P->next = 0; //null
