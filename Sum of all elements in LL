@@ -1,0 +1,19 @@
+int Add(struct Node *p)
+{
+    int sum=0;
+    while(p!=NULL)
+    {
+        sum=sum+p->data;
+        p=p->next;
+    }
+}
+
+//Using Recursion
+int RAdd(struct Node *p)
+{
+    if(p==0)
+    {
+        return 0;
+    }
+    return RAdd(p->next)+p->data;
+}
