@@ -1,5 +1,5 @@
 # DSA
-Repository for participants in the Hacktoberfest 2021 who want to contribute and learn DSA.
+Repository for participants in the Hacktoberfest 2022 who want to contribute and learn DSA.
 
 # Steps:
 1. Fork this Repository using the button at the top

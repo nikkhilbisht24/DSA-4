@@ -22,3 +22,5 @@ class Solution{
 int main(){
     Solution();
 }
+//tc - O(N)
+//sc - O(N)
