@@ -24,3 +24,20 @@ int main(){
 }
 //tc - O(N)
 //sc - O(N)
+
+class Solution(object):
+    def twoSum(self, nums, target):
+        # a + b = target
+        dic = {}
+        ans = []
+        
+        for i in range(len(nums)):
+            remain = target - nums[i]
+            if remain in dic.keys():
+                ans.append(i)
+                ans.append(dic.get(remain))
+                return ans
+            
+            dic[nums[i]] = i
+        
+        return ans
