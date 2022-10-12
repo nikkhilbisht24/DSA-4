@@ -1,0 +1,40 @@
+class Solution {
+public:
+    int longestConsecutive(vector<int>& arr) {
+    int n=arr.size();
+    unordered_set<int> s;
+    int largestLen = 1;
+        
+    //if arr if null
+    if(n==0)
+        return 0;
+
+    //putting all the vector elements inside set
+    for(int x : arr){
+        s.insert(x);
+    }
+
+    //traversing all the elements of set on by one just like traversing array
+    unordered_set<int> :: iterator itr; 
+    for(itr = s.begin() ; itr != s.end() ; itr++){  //just like int i=0 ; // we have iterator itr = first index of set
+        int prevConsectiveElement = *itr -1 ; //*itr means the actual value of the element at that index
+
+        if(s.find(prevConsectiveElement) == s.end()){   // if the previous consecutive element is not present
+            //so this is the head element (means the consecitve element chaining are started from this element)
+            int next_no = (*itr) + 1;
+            int cnt = 1; 
+
+            while(s.find(next_no) != s.end()){ // if next number is present in the set then do 2 things
+                next_no++;
+                cnt++;
+            }
+
+            if(cnt>largestLen){
+                largestLen=cnt; 
+            }
+        }
+    }
+
+    return largestLen;
+    }
+};
